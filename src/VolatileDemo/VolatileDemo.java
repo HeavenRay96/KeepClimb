@@ -7,7 +7,7 @@ public class VolatileDemo {
 
     public static void main(String[] args) {
         atomic();
-
+        visibleDemo();
     }
 
     // volatile不保证原子性
