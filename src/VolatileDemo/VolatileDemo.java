@@ -8,21 +8,22 @@ public class VolatileDemo {
     public static void main(String[] args) {
         atomic();
         visibleDemo();
+
     }
 
     // volatile不保证原子性
-    /*
+    /**
      * 如何解决？
      * 1.在addplus方法加 sync
      * 2.使用JUC下的AtomicInteger
      *
      */
+
     public static void atomic() {
         mydate md = new mydate();
         // 创建20个线程
         for (int i = 1; i <= 20; i++) {
             new Thread(new Runnable() {
-
                 @Override
                 public void run() {
                     // 每个线程调用number++ 1000次
@@ -77,6 +78,7 @@ class mydate {
     AtomicInteger atomicInteger = new AtomicInteger();
 
     public void addTo60() {
+
         this.number = 60;
     }
 
