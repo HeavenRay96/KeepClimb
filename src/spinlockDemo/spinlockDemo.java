@@ -24,7 +24,6 @@ public class spinlockDemo {
 
     public static void main(String[] args) {
         spinlockDemo spinlockDemo = new spinlockDemo();
-
         new Thread(new Runnable() {
             @Override
             public void run() {

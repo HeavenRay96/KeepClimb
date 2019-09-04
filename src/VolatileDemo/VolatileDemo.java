@@ -12,11 +12,11 @@ public class VolatileDemo {
     }
 
     // volatile不保证原子性
+
     /**
      * 如何解决？
      * 1.在addplus方法加 sync
      * 2.使用JUC下的AtomicInteger
-     *
      */
 
     public static void atomic() {
