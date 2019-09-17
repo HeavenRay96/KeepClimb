@@ -15,20 +15,21 @@ public class LinkedHashMapDemo {
 	            return size() > MAX_ENTRIES;
 	         }
 	      };
-	      
-	      lhm.put(0, "H");
-	      lhm.put(1, "E");
-	      lhm.put(2, "L");
-	      lhm.put(3, "L");
-	      lhm.put(4, "O");
-	      lhm.put(5, "!");
-	      lhm.put(6, "H");
-	      lhm.put(7, "E");
-	      lhm.put(8, "L");
-	      lhm.get(1);
-	      lhm.put(9, "L");
-	      lhm.put(10, "O");
-	      lhm.put(11, "!");
+	      for (int i = 0; i < args.length; i++) {
+	    	  lhm.put(0, i);
+		}
+	      lhm.put(0, 0);
+	      lhm.put(1, 1);
+	      lhm.put(2, 2);
+	      lhm.put(3, 3);
+	      lhm.put(4, 4);
+	      lhm.put(5, 5);
+	      lhm.put(6, 6);
+	      lhm.put(7, 7);
+	      lhm.put(8, 8);
+	      lhm.get(1);//访问会将元素放到链表尾部
+	      lhm.put(9, 9);
+	     
 
 	      System.out.println("" + lhm);
 
