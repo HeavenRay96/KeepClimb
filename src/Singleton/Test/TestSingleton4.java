@@ -32,7 +32,7 @@ public class TestSingleton4 {
 
         Singleton4 s1 = f1.get();
         Singleton4 s2 = f2.get();
-
+      //线程不安全 会返回false
         System.out.println(s1 == s2);
         System.out.println(s1);
         System.out.println(s2);

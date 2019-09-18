@@ -16,7 +16,7 @@ public class VolatileDemo {
     /**
      * 如何解决？
      * 1.在addplus方法加 sync
-     * 2.使用JUC下的AtomicInteger
+     * 2.使用JUC下的AtomicInteger(底层使用CAS)
      */
 
     public static void atomic() {
