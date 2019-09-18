@@ -2,7 +2,6 @@ package LinkedHashMapDemo;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
-
 public class LinkedHashMapDemo {
 
 	   private static final int MAX_ENTRIES = 9;

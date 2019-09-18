@@ -2,35 +2,35 @@ package FatherSon;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
-//è°ƒç”¨é¡ºåº
-//çˆ¶ç±»çš„é™æ€ä»£ç ï¼ˆæŒ‰å‡ºç°çš„é¡ºåºæ‰§è¡Œï¼‰
-//å­ç±»çš„é™æ€ä»£ç ï¼ˆæŒ‰å‡ºç°çš„é¡ºåºæ‰§è¡Œï¼‰
-//çˆ¶ç±»çš„éé™æ€ä»£ç 
-//å­ç±»çš„éé™æ€ä»£ç 
-//çˆ¶ç±»çš„æ„é€ å‡½æ•° å­ç±»çš„æ„é€ å‡½æ•°
+//µ÷ÓÃË³Ğò
+//¸¸ÀàµÄ¾²Ì¬´úÂë£¨°´³öÏÖµÄË³ĞòÖ´ĞĞ£©
+//×ÓÀàµÄ¾²Ì¬´úÂë£¨°´³öÏÖµÄË³ĞòÖ´ĞĞ£©
+//¸¸ÀàµÄ·Ç¾²Ì¬´úÂë
+//×ÓÀàµÄ·Ç¾²Ì¬´úÂë
+//¸¸ÀàµÄ¹¹Ôìº¯Êı ×ÓÀàµÄ¹¹Ôìº¯Êı
 public class Son  extends Father{
 	private int i= test();
 	 private static int j=method();
 	 static {
-		 System.out.println("å­ç±»çš„é™æ€ä»£ç å—");
+		 System.out.println("×ÓÀàµÄ¾²Ì¬´úÂë¿é");
 		 
 	 }
 	 Son(){
-		 System.out.println("å­ç±»çš„æ„é€ å‡½æ•°");
+		 System.out.println("×ÓÀàµÄ¹¹Ôìº¯Êı");
 	 }
 	 
 	 {
-		 System.out.println("å­ç±»çš„éé™æ€ä»£ç å—");
+		 System.out.println("×ÓÀàµÄ·Ç¾²Ì¬´úÂë¿é");
 	 }
 	 
 	 
 	 public int  test() {
-		System.out.println("å­ç±»çš„éé™æ€ä»£ç ");
+		System.out.println("×ÓÀàµÄ·Ç¾²Ì¬´úÂë");
 		return 1;
 	}
 	 
 	 public static int method() {
-		System.out.println("å­ç±»çš„é™æ€ä»£ç ");
+		System.out.println("×ÓÀàµÄ¾²Ì¬´úÂë");
 		return 1;
 	}
 	 public static void main(String[] args) {
