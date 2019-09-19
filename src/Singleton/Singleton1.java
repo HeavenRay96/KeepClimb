@@ -1,13 +1,13 @@
 package Singleton;
 
 /**
- * ¶öººÊ½£º
- * 	ÔÚÀà³õÊ¼»¯Ê±Ö±½Ó´´½¨ÊµÀý¶ÔÏó£¬²»¹ÜÄãÊÇ·ñÐèÒªÕâ¸ö¶ÔÏó¶¼»á´´½¨
+ * é¥¿æ±‰å¼ï¼š
+ * 	åœ¨ç±»åˆå§‹åŒ–æ—¶ç›´æŽ¥åˆ›å»ºå®žä¾‹å¯¹è±¡ï¼Œä¸ç®¡ä½ æ˜¯å¦éœ€è¦è¿™ä¸ªå¯¹è±¡éƒ½ä¼šåˆ›å»º
  *
- * £¨1£©¹¹ÔìÆ÷Ë½ÓÐ»¯
- * £¨2£©×ÔÐÐ´´½¨£¬²¢ÇÒÓÃ¾²Ì¬±äÁ¿±£´æ
- * £¨3£©ÏòÍâÌá¹©Õâ¸öÊµÀý
- * £¨4£©Ç¿µ÷ÕâÊÇÒ»¸öµ¥Àý£¬ÎÒÃÇ¿ÉÒÔÓÃfinalÐÞ¸Ä
+ * ï¼ˆ1ï¼‰æž„é€ å™¨ç§æœ‰åŒ–
+ * ï¼ˆ2ï¼‰è‡ªè¡Œåˆ›å»ºï¼Œå¹¶ä¸”ç”¨é™æ€å˜é‡ä¿å­˜
+ * ï¼ˆ3ï¼‰å‘å¤–æä¾›è¿™ä¸ªå®žä¾‹
+ * ï¼ˆ4ï¼‰å¼ºè°ƒè¿™æ˜¯ä¸€ä¸ªå•ä¾‹ï¼Œæˆ‘ä»¬å¯ä»¥ç”¨finalä¿®æ”¹
  */
 public class Singleton1 {
     public static final Singleton1 INSTANCE = new Singleton1();

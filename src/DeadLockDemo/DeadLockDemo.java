@@ -15,14 +15,14 @@ class HoldThread implements Runnable {
     @Override
     public void run() {
         synchronized (lockA) {
-            System.out.println(Thread.currentThread().getName() + "\t ×Ô¼º³ÖÓĞËø" + lockA + "³¢ÊÔ»ñµÃ" + lockB);
+            System.out.println(Thread.currentThread().getName() + "\t è‡ªå·±æŒæœ‰é”" + lockA + "å°è¯•è·å¾—" + lockB);
             try {
                 TimeUnit.SECONDS.sleep(1);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
             synchronized (lockB) {
-                System.out.println(Thread.currentThread().getName() + "\t ×Ô¼º³ÖÓĞËø" + lockB + "³¢ÊÔ»ñµÃ" + lockA);
+                System.out.println(Thread.currentThread().getName() + "\t è‡ªå·±æŒæœ‰é”" + lockB + "å°è¯•è·å¾—" + lockA);
             }
         }
     }
@@ -30,12 +30,12 @@ class HoldThread implements Runnable {
 
 /**
  * Description:
- * ËÀËøÊÇÖ¸Á½¸ö»òÕßÒÔÉÏµÄ½ø³ÌÔÚÖ´ĞĞ¹ı³ÌÖĞ,
- * ÒòÕù¶á×ÊÔ´¶øÔì³ÉµÄÒ»ÖÖÏà»¥µÈ´ıµÄÏÖÏó,
- * ÈôÎŞÍâÁ¦¸ÉÉæÄÇËûÃÇ¶¼½«ÎŞ·¨ÍÆ½øÏÂÈ¥
+ * æ­»é”æ˜¯æŒ‡ä¸¤ä¸ªæˆ–è€…ä»¥ä¸Šçš„è¿›ç¨‹åœ¨æ‰§è¡Œè¿‡ç¨‹ä¸­,
+ * å› äº‰å¤ºèµ„æºè€Œé€ æˆçš„ä¸€ç§ç›¸äº’ç­‰å¾…çš„ç°è±¡,
+ * è‹¥æ— å¤–åŠ›å¹²æ¶‰é‚£ä»–ä»¬éƒ½å°†æ— æ³•æ¨è¿›ä¸‹å»
  *
- * ÔÚÖÕ¶ËÖĞÊ¹ÓÃ jps ÃüÁî ²é¿´java½ø³ÌºÅ
- * ÔÙÊ¹ÓÃ jstack+½ø³ÌºÅ ·ÖÎö
+ * åœ¨ç»ˆç«¯ä¸­ä½¿ç”¨ jps å‘½ä»¤ æŸ¥çœ‹javaè¿›ç¨‹å·
+ * å†ä½¿ç”¨ jstack+è¿›ç¨‹å· åˆ†æ
  *
  **/
 public class DeadLockDemo {

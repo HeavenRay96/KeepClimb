@@ -6,25 +6,25 @@ import java.util.concurrent.TimeUnit;
 
     public class SemaphoreDemo {
         public static void main(String[] args) {
-            //Ä£Äâ3¸öÍ£³µÎ»
+            //æ¨¡æ‹Ÿ3ä¸ªåœè½¦ä½
             Semaphore semaphore = new Semaphore(3);
-            //Ä£Äâ6²¿Æû³µ
+            //æ¨¡æ‹Ÿ6éƒ¨æ±½è½¦
             for (int i = 1; i <= 6; i++) {
                 new Thread(() -> {
                     try {
-                        //ÇÀµ½×ÊÔ´
+                        //æŠ¢åˆ°èµ„æº
                         semaphore.acquire();
-                        System.out.println(Thread.currentThread().getName() + "\tÇÀµ½³µÎ»");
+                        System.out.println(Thread.currentThread().getName() + "\tæŠ¢åˆ°è½¦ä½");
                         try {
                             TimeUnit.SECONDS.sleep(15);
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }
-                        System.out.println(Thread.currentThread().getName() + "\t Í£3ÃëºóÀë¿ª³µÎ»");
+                        System.out.println(Thread.currentThread().getName() + "\t åœ3ç§’åç¦»å¼€è½¦ä½");
                     } catch (Exception e) {
                         e.printStackTrace();
                     } finally {
-                        //ÊÍ·Å×ÊÔ´
+                        //é‡Šæ”¾èµ„æº
                         semaphore.release();
                     }
                 }, String.valueOf(i)).start();

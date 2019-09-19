@@ -11,16 +11,16 @@ public class CyclicBarrierDemo {
         for (int i = 1; i <=7; i++) {
             final int temp = i;
             new Thread(()->{
-                System.out.println(Thread.currentThread().getName()+"µ½´ï¼¯ºÏµã");
+                System.out.println(Thread.currentThread().getName()+"åˆ°è¾¾é›†åˆç‚¹");
                 try {
                     cyclicBarrier.await();
-                    System.out.println(Thread.currentThread().getName()+"¿ªÊ¼ÂÃĞĞ");
+                    System.out.println(Thread.currentThread().getName()+"å¼€å§‹æ—…è¡Œå•¦ï¼ï¼");
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 } catch (BrokenBarrierException e) {
                     e.printStackTrace();
                 }
-            },"Ïß³Ì"+String.valueOf(i)).start();
+            },"çº¿ç¨‹"+String.valueOf(i)).start();
         }
     }
 }
@@ -28,7 +28,7 @@ public class CyclicBarrierDemo {
 
     @Override
     public void run() {
-        System.out.println("****µ¼ÓÎ·Ö·¢»¤ÕÕÇ©Ö¤****");
+        System.out.println("****å¯¼æ¸¸å‘æ”¾ç­¾è¯****");
         try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {

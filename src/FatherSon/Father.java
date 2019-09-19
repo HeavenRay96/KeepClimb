@@ -5,25 +5,25 @@ public class Father {
  private static int j=method();
  
  static {
-	 System.out.println("¸¸ÀàµÄ¾²Ì¬´úÂë¿é");
+	 System.out.println("çˆ¶ç±»çš„é™æ€ä»£ç å—");
 	 
  }
  Father(){
-	 System.out.println("¸¸ÀàµÄ¹¹Ôìº¯Êı");
+	 System.out.println("çˆ¶ç±»çš„æ„é€ å‡½æ•°");
  }
  
  {
-	 System.out.println("¸¸ÀàµÄ·Ç¾²Ì¬´úÂë¿é");
+	 System.out.println("çˆ¶ç±»çš„éé™æ€ä»£ç å—");
  }
  
- //·Ç¾²Ì¬·½·¨Ç°ÃæÓĞÒ»¸öÄ¬ÈÏµÄ ¶ÔÏóthis
+ //éé™æ€æ–¹æ³•å‰é¢æœ‰ä¸€ä¸ªé»˜è®¤çš„ å¯¹è±¡this
  public int  test() {
-	System.out.println("¸¸ÀàµÄ·Ç¾²Ì¬´úÂë¿é");
+	System.out.println("çˆ¶ç±»çš„éé™æ€ä»£ç å—");
 	return 1;
 }
  
  public static int method() {
-	System.out.println("¸¸ÀàµÄ¾²Ì¬´úÂë");
+	System.out.println("çˆ¶ç±»çš„é™æ€ä»£ç ");
 	return 1;
 }
 }

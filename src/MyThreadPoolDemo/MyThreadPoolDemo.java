@@ -11,15 +11,15 @@ public class MyThreadPoolDemo {
                 TimeUnit.SECONDS,
                 new LinkedBlockingDeque<Runnable>(3),
                 Executors.defaultThreadFactory(),
-                //Ä¬ÈÏÅ×³öÒì³£
+                //é»˜è®¤æŠ›å‡ºå¼‚å¸¸
                 //new ThreadPoolExecutor.AbortPolicy()
-                //»ØÍËµ÷ÓÃÕß
+                //å›é€€è°ƒç”¨è€…
                 //new ThreadPoolExecutor.CallerRunsPolicy()
-                //´¦Àí²»À´µÄ²»´¦Àí
+                //å¤„ç†ä¸æ¥çš„ä¸å¤„ç†
                 //new ThreadPoolExecutor.DiscardOldestPolicy()
                 new ThreadPoolExecutor.DiscardPolicy()
         );
-        //Ä£Äâ10¸öÓÃ»§À´°ìÀíÒµÎñ Ã»ÓĞÓÃ»§¾ÍÊÇÀ´×ÔÍâ²¿µÄÇëÇóÏß³Ì.
+        //æ¨¡æ‹Ÿ10ä¸ªç”¨æˆ·æ¥åŠç†ä¸šåŠ¡ æ²¡æœ‰ç”¨æˆ·å°±æ˜¯æ¥è‡ªå¤–éƒ¨çš„è¯·æ±‚çº¿ç¨‹.
 
         try {
             for (int i = 1; i <= 8; i++){
@@ -30,7 +30,7 @@ public class MyThreadPoolDemo {
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
-                    System.out.println(Thread.currentThread().getName() + "\t °ìÀíÒµÎñ" +tempInt);
+                    System.out.println(Thread.currentThread().getName() + "\t åŠç†ä¸šåŠ¡" +tempInt);
                 });}
         } catch (Exception e) {
             e.printStackTrace();
@@ -42,22 +42,22 @@ public class MyThreadPoolDemo {
 
     private static void threadPoolInit() {
         /**
-         * Ò»³Ø5¸ö´¦ÀíÏß³Ì
+         * ä¸€æ± 5ä¸ªå¤„ç†çº¿ç¨‹
          */
         //ExecutorService threadPool= Executors.newFixedThreadPool(5);
         /**
-         * Ò»³ØÒ»Ïß³Ì
+         * ä¸€æ± ä¸€çº¿ç¨‹
          */
         //ExecutorService threadPool= Executors.newSingleThreadExecutor();
         /**
-         * Ò»³ØNÏß³Ì
+         * ä¸€æ± Nçº¿ç¨‹
          */
         ExecutorService threadPool = Executors.newCachedThreadPool();
-        //Ä£Äâ10¸öÓÃ»§À´°ìÀíÒµÎñ Ã»ÓĞÓÃ»§¾ÍÊÇÀ´×ÔÍâ²¿µÄÇëÇóÏß³Ì.
+        //æ¨¡æ‹Ÿ10ä¸ªç”¨æˆ·æ¥åŠç†ä¸šåŠ¡ æ²¡æœ‰ç”¨æˆ·å°±æ˜¯æ¥è‡ªå¤–éƒ¨çš„è¯·æ±‚çº¿ç¨‹.
         try {
             for (int i = 1; i <= 20; i++) {
                 threadPool.execute(() -> {
-                    System.out.println(Thread.currentThread().getName() + "\t °ìÀíÒµÎñ");
+                    System.out.println(Thread.currentThread().getName() + "\t åŠç†ä¸šåŠ¡");
                 });
                 try {
                     TimeUnit.MICROSECONDS.sleep(200);

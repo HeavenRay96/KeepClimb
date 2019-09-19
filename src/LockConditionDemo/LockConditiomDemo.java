@@ -4,12 +4,12 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * Ïß³Ì½»ÌæÖ´ĞĞ ÊµÏÖ
- * Ïß³ÌABCÆô¶¯
- * Ïß³ÌA´òÓ¡ 5´Î Ïß³ÌB´òÓ¡ 10´Î Ïß³ÌC´òÓ¡15´Î
- * ´òÓ¡10ÂÖ
+ * çº¿ç¨‹äº¤æ›¿æ‰§è¡Œ å®ç°
+ * çº¿ç¨‹ABCå¯åŠ¨
+ * çº¿ç¨‹Aæ‰“å° 5æ¬¡ çº¿ç¨‹Bæ‰“å° 10æ¬¡ çº¿ç¨‹Cæ‰“å°15æ¬¡
+ * æ‰“å°10è½®
  *
- * ¶àÏß³Ì»·¾³ÖĞ Lock ¿ÉÒÔÀûÓÃ Condition ¾«È·»½ĞÑÏß³Ì
+ * å¤šçº¿ç¨‹ç¯å¢ƒä¸­ Lock å¯ä»¥åˆ©ç”¨ Condition ç²¾ç¡®å”¤é†’çº¿ç¨‹
  */
 
 class ShareResource{
@@ -22,7 +22,7 @@ class ShareResource{
     public void printA(){
         lock.lock();
         try {
-            //´Ë´¦ÓÃwhile ²»ÓÃif ·ÀÖ¹Ğé¼Ù»½ĞÑ
+            //æ­¤å¤„ç”¨while ä¸ç”¨if é˜²æ­¢è™šå‡å”¤é†’
            while(number!=1) {
                condition1.await();
 

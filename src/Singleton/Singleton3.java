@@ -3,15 +3,8 @@ package Singleton;
 import java.io.IOException;
 import java.util.Properties;
 /**
-    *  ¶öººÊ½£º
- * 	ÔÚÀà³õÊ¼»¯Ê±Ö±½Ó´´½¨ÊµÀý¶ÔÏó£¬²»¹ÜÄãÊÇ·ñÐèÒªÕâ¸ö¶ÔÏó¶¼»á´´½¨
- * 
-    * Ð§¹ûºÍSingleton1ÊÇÒ»ÑùµÄ 
- * 
-    * Çø±ðÊÇÒ»¸öÔÚ¾²Ì¬³ÉÔ±±äÁ¿µ÷ÓÃ¹¹Ôìº¯Êý  
-    *             Ò»¸öÔÚ¾²Ì¬´úÂë¿éµ÷ÓÃ¹¹Ôìº¯Êý
- * 
-    *  ÎªÁË·½±ãÏò¹¹Ôìº¯Êý´«ÈëÍâ²¿ÅäÖÃÎÄ¼þÖÐµÄÖµ  ³õÊ¼»¯Êý¾Ý
+ åˆ›å»ºå¯¹è±¡æ”¾åœ¨ static é™æ€ä»£ç å—ä¸­
+ ä¸ºäº†æ–¹ä¾¿ä»Žå¤–éƒ¨é…ç½®æ–‡ä»¶åˆå§‹åŒ–æ•°æ®
  * 
  */
 public class Singleton3 {

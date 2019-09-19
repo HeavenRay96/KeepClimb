@@ -11,22 +11,22 @@ public class VolatileDemo {
 
     }
 
-    // volatile²»±£Ö¤Ô­×ÓĞÔ
+    // volatileä¸ä¿è¯åŸå­æ€§
 
     /**
-     * ÈçºÎ½â¾ö£¿
-     * 1.ÔÚaddplus·½·¨¼Ó sync
-     * 2.Ê¹ÓÃJUCÏÂµÄAtomicInteger(µ×²ãÊ¹ÓÃCAS)
+     * å¦‚ä½•è§£å†³ï¼Ÿ
+     * 1.åœ¨addplusæ–¹æ³•åŠ  sync
+     * 2.ä½¿ç”¨JUCä¸‹çš„AtomicInteger(åº•å±‚ä½¿ç”¨CAS)
      */
 
     public static void atomic() {
         mydate md = new mydate();
-        // ´´½¨20¸öÏß³Ì
+        // åˆ›å»º20ä¸ªçº¿ç¨‹
         for (int i = 1; i <= 20; i++) {
             new Thread(new Runnable() {
                 @Override
                 public void run() {
-                    // Ã¿¸öÏß³Ìµ÷ÓÃnumber++ 1000´Î
+                    // æ¯ä¸ªçº¿ç¨‹è°ƒç”¨number++ 1000æ¬¡
                     for (int j = 1; j <= 1000; j++) {
                         md.addpuls();
                         md.addatomic();
@@ -44,7 +44,7 @@ public class VolatileDemo {
         System.out.println(Thread.currentThread().getName() + " Atomic number :" + md.atomicInteger);
     }
 
-    // volatile±£Ö¤¿É¼ûĞÔ
+    // volatileä¿è¯å¯è§æ€§
     public static void visibleDemo() {
         mydate md = new mydate();
 
@@ -74,7 +74,7 @@ public class VolatileDemo {
 }
 
 class mydate {
-    volatile int number = 0;// ²»¼Óvolatile¹Ø¼ü×Ö 28ĞĞ whileÑ­»·»áÒ»Ö±Ñ­»· ÒòÎªÃ»ÓĞµÃµ½Ïß³ÌĞŞ¸ÄµÄnumber×îĞÂµÄÖµ
+    volatile int number = 0;// ä¸åŠ volatileå…³é”®å­— 28è¡Œ whileå¾ªç¯ä¼šä¸€ç›´å¾ªç¯ å› ä¸ºæ²¡æœ‰å¾—åˆ°çº¿ç¨‹ä¿®æ”¹çš„numberæœ€æ–°çš„å€¼
     AtomicInteger atomicInteger = new AtomicInteger();
 
     public void addTo60() {
