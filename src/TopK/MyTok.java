@@ -5,7 +5,7 @@ public class MyTok {
 	public static void main(String[] args) {
 		// 源数据
 		int[] data = { 45, 275, 12, 6, 45, 478, 41, 1246, 456, 12, 546, 1237 };
-
+                
 		// 获取TopK
 		int[] TopK = topK(data, 3);
 
@@ -24,11 +24,11 @@ public class MyTok {
 		// 传入数组 MinsHeap构造方法会调用buildMinheap() 生成最小堆
 		MinsHeap minsHeap = new MinsHeap(topk);
 
-		// 从K下标开始遍历，如果大于根节点则替换根节点
+		// 从K下标开始遍历，如果大于根节点则替换根节点并重新调整
 		for (int i = k; i < data.length; i++) {
 			int root = minsHeap.getRoot();
 			if (data[i] > root)
-				minsHeap.setRoot(data[i]);
+				minsHeap.setRootAndAdjust(data[i]);
 		}
 		return topk;
 	}
@@ -43,7 +43,7 @@ class MinsHeap {
 	}
 
 	// 替换根节点的值 在重新调整
-	public void setRoot(int i) {
+	public void setRootAndAdjust(int i) {
 		data[0] = i;
 		adjust(0);
 

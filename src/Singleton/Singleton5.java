@@ -17,6 +17,7 @@ public class Singleton5 {
     }
 
     public static Singleton5 getInstance() {
+    	//避免后来线程 再已经有实例的情况下 再次进入同步块 减少加锁解锁消耗
         if (instance == null) {
             synchronized (Singleton5.class) {
                 if (instance == null) {

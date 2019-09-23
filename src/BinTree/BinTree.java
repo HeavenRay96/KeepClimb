@@ -1,8 +1,12 @@
 package BinTree;
 
+import java.math.BigInteger;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Queue;
+import java.util.Stack;
+
+import com.sun.org.apache.regexp.internal.recompile;
 /**
 
 前序遍历：
@@ -32,24 +36,42 @@ public class BinTree {
 	}
 	
 	public static void main(String[] args) {
-		String[] array = { "A", "B","C","D","E","F","G","H","I","J",null,null,"K",null,null,null,null,"M",null,null,"N" }; 
+		//String[] array = { "A", "B","C","D","E","F","G","H","I","J",null,null,"K",null,null,null,null,"M",null,null,"N" }; 
+		String[] array1 = { "A", "B","C","D","E","F","G","H","I","J","K","M","N" }; 
 		ArrayList<Node> nodeList=new ArrayList<Node>();
-		createBinTree(array,nodeList);
-		// nodeList????0???????????????????  
+		createBinTree(array1,nodeList);
+		 
         Node root = nodeList.get(0);  
-        System.out.println("前序遍历");  
+        
+        System.out.println("前序遍历：");  
         preOrder(root);  
         System.out.println();  
-        System.out.println("中序遍历");
+        System.out.println();
+        System.out.println("中序遍历：");
         midOrder(root);  
         System.out.println();  
-        System.out.println("后序遍历");  
+        System.out.println();
+        System.out.println("后序遍历：");  
         lastOrder(root);  
         System.out.println();
-        System.out.println("层序遍历");  
+        System.out.println();
+        System.out.println("层序遍历：");  
         floorOrder(root);
+        System.out.println();
+        System.out.println();
+        System.out.println("中序非递归遍历：");
+        midOrder1(root);
+        System.out.println();
+        System.out.println();
+        System.out.println("叶子节点：");
+        removeLeaves(root,null);
+        System.out.println();
+        System.out.println();
+        System.out.println("删除叶子节点后的层序遍历：");  
+        floorOrder(root);  
 		
 	}
+	
 	//用层序遍历的数组 构建一颗二叉树
     public static void createBinTree(Object[] array,ArrayList<Node> nodeList) {  
         //nodeList = new LinkedList<Node>(); 
@@ -89,7 +111,7 @@ public class BinTree {
 		preOrder(node.rightChild);
 	}
 
-	// 中序遍历
+	// 中序遍历 
 	public static void midOrder(Node node) {
 		if (node == null)
 			return;
@@ -98,7 +120,26 @@ public class BinTree {
 		System.out.print(node.data + " ");
 		midOrder(node.rightChild);
 	}
-
+	
+    //中序非递归 使用栈
+	public static void midOrder1(Node node) {
+		Stack<Node> stack=new Stack<BinTree.Node>();	
+		int i=stack.size();
+		Node currNode=node;
+		while(currNode!=null||!stack.isEmpty()) {
+			//节点入栈
+			while(currNode!=null) {
+				stack.push(currNode);
+				currNode=currNode.leftChild;
+			}
+			
+			//节点出栈 
+			currNode=stack.pop();
+			System.out.print(currNode.data+" ");
+			currNode=currNode.rightChild;
+		}
+			
+	}
 	// 后序遍历
 	public static void lastOrder(Node node) {
 		if (node == null)
@@ -108,6 +149,7 @@ public class BinTree {
 		if(node.data!=null)
 		System.out.print(node.data + " ");
 	}
+	
 	// 层序遍历(广度优先遍历) 使用队列实现
 	public static void floorOrder(Node node) {
 		 Queue<Node> queue = new ArrayDeque<>();		
@@ -125,7 +167,32 @@ public class BinTree {
 		  }
 				
 	}
+	
+	    
+	
+	//打印叶子节点并删除 pre代表父节点
+	public static void removeLeaves(Node root,Node pre) {	
+		 if(root==null)
+			 return;
+             if (root.leftChild == null && root.rightChild == null )  
+             {   
+            	 //打印叶子节点
+            	 System.out.print(root.data+" "); 
+            	 
+            	 //删除叶子节点
+            	 if(root.equals(pre.leftChild))
+            		 pre.leftChild=null;            	 
+            	 if(root.equals(pre.rightChild))
+            		 pre.rightChild=null;
+               }
+             removeLeaves(root.leftChild,root);
+             removeLeaves(root.rightChild,root);          		             		  
+	}
+	
+
 /**
+ * "A", "B","C","D","E","F","G","H","I","J",null,null,"K",null,null,null,null,"M",null,null,"N"
+ * 
  *                                   *A* 
  *                                 /     \
  *                                /       \
