@@ -9,7 +9,6 @@ public class demo {
             @Override
             public void await() throws InterruptedException {
                 super.await();
-                System.out.println(Thread.currentThread().getName() + " count down is ok");
             }
         };
 
@@ -44,8 +43,10 @@ public class demo {
 
         thread1.start();
         thread2.start();
-
         countDownLatch.await();
+        System.out.println(Thread.currentThread().getName() + " count down is ok");
+
+
     }
 
 }
