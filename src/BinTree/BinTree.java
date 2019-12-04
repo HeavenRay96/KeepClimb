@@ -123,19 +123,18 @@ public class BinTree {
 	
     //中序非递归 使用栈
 	public static void midOrder1(Node node) {
-		Stack<Node> stack=new Stack<BinTree.Node>();	
-		int i=stack.size();
+		Stack<Node> stack=new Stack<BinTree.Node>();
 		Node currNode=node;
 		while(currNode!=null||!stack.isEmpty()) {
-			//节点入栈
+			//节点的左节点全部入栈
 			while(currNode!=null) {
 				stack.push(currNode);
 				currNode=currNode.leftChild;
 			}
-			
-			//节点出栈 
+             //1.左节点出栈
 			currNode=stack.pop();
 			System.out.print(currNode.data+" ");
+			// 2.把出栈节点的右节点入栈 如果while判断为空 则出栈节点的根节点出栈
 			currNode=currNode.rightChild;
 		}
 			
