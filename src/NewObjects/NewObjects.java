@@ -1,6 +1,15 @@
 package NewObjects;
 
+import org.apache.commons.lang3.StringEscapeUtils;
 import java.lang.reflect.Constructor;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.net.URLDecoder;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.Date;
+import java.util.List;
 
 public class NewObjects  implements Cloneable  {
     public static void main(String[] args) throws Exception{
@@ -35,5 +44,25 @@ public class NewObjects  implements Cloneable  {
         System.out.println(object3.toString());
         System.out.println(object4.toString());
         System.out.println(object5.toString());
+        List<Dog> dogs=new ArrayList<Dog>();
+        dogs.add(new Dog("lucky","red",99));
+        dogs.add(new Dog("lucky","red",44));
+        dogs.add(new Dog("lucky","red",33));
+        dogs.add(new Dog("lucky","red",199));
+        System.out.println(dogs.toString());
+        dogs.sort(Comparator.comparing(Dog::getWeight).reversed());
+        System.out.println(dogs.toString());
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        System.out.println(simpleDateFormat.format(new Date()));
+        BigDecimal bigDecimal=new BigDecimal("0");
+        BigDecimal re=new BigDecimal("0");
+        BigDecimal di=new BigDecimal("1000");
+        re=bigDecimal.divide(di, 0, RoundingMode.HALF_DOWN);
+        System.out.println(String.valueOf(re));
+        String s="&amp;";
+         String s1= URLDecoder.decode(s,"utf-8");
+        String s2= StringEscapeUtils.unescapeHtml4(s);
+        System.out.println(s2);
+
     }
 }
