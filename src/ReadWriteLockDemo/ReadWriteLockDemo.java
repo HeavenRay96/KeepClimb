@@ -21,7 +21,6 @@ public class ReadWriteLockDemo {
                    myCache.put(tempInt+"", "");
                 }
             },"Thread "+i).start();
-
         }
        //十个读线程
         for (int i = 1; i <= 10; i++) {

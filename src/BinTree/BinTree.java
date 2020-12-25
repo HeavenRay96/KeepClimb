@@ -1,12 +1,7 @@
 package BinTree;
 
-import java.math.BigInteger;
-import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.Queue;
-import java.util.Stack;
+import java.util.*;
 
-import com.sun.org.apache.regexp.internal.recompile;
 /**
 
 前序遍历：
@@ -36,10 +31,10 @@ public class BinTree {
 	}
 	
 	public static void main(String[] args) {
-		//String[] array = { "A", "B","C","D","E","F","G","H","I","J",null,null,"K",null,null,null,null,"M",null,null,"N" }; 
-		String[] array1 = { "A", "B","C","D","E","F","G","H","I","J","K","M","N" }; 
+		String[] array = { "A", "B","C","D","E","F","G","H","I","J",null,null,"K",null,null,null,null,"M",null,null,"N" };
+		//String[] array1 = { "A", "B","C","D","E","F","G","H","I","J","K","M","N" };
 		ArrayList<Node> nodeList=new ArrayList<Node>();
-		createBinTree(array1,nodeList);
+		createBinTree(array,nodeList);
 		 
         Node root = nodeList.get(0);  
         
@@ -166,8 +161,42 @@ public class BinTree {
 		  }
 				
 	}
-	
-	    
+	//二叉树之字形层序遍历
+	public static void floorOrderZ(Node node) {
+		LinkedList<Node> queue = new LinkedList<>();
+		queue.offer(node);
+		Boolean forward = true;
+		while (!queue.isEmpty()) {
+			int size = queue.size();
+			for (int i = 0; i < size; i++) {
+				if (forward) {
+					node = queue.pollLast();
+					if (node.data != null)
+						System.out.print(node.data + " ");
+					if (node.leftChild != null) {
+						queue.offerFirst(node.leftChild);
+					}
+					if (node.rightChild != null) {
+						queue.offerFirst(node.rightChild);
+					}
+				} else {
+					node = queue.poll();
+					if (node.data != null)
+						System.out.print(node.data + " ");
+					if (node.rightChild != null) {
+						queue.offer(node.rightChild);
+					}
+					if (node.leftChild != null) {
+						queue.offer(node.leftChild);
+					}
+				}
+
+
+			}
+			forward = !forward;
+		}
+
+	}
 	
 	//打印叶子节点并删除 pre代表父节点
 	public static void removeLeaves(Node root,Node pre) {	

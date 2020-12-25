@@ -12,7 +12,6 @@ public class MyTok {
 		for (int i = 0; i < TopK.length; i++) {
 			System.out.println(TopK[i]);
 		}
-
 	}
 
 	private static int[] topK(int[] data, int k) {

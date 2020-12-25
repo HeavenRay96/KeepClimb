@@ -1,3 +1,5 @@
+import NewObjects.Dog;
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import com.sun.xml.internal.bind.v2.runtime.unmarshaller.Loader;
 import javafx.beans.property.adapter.JavaBeanIntegerProperty;
 
@@ -24,6 +26,8 @@ public class Main implements Cloneable {
 //        while (in.hasNextInt()) {
 //            arrayList.add(in.nextInt());
 //        }
+        System.out.println(getCurrentFiscalYearBegin(new Date()).toLocaleString());
+
         System.out.println(findodd().toString());
         StringBuilder stringBuilder=new StringBuilder();
         //ArrayList<Integer> arrayList=new ArrayList<>();
@@ -78,6 +82,56 @@ public class Main implements Cloneable {
         Main mainxx=new Main("xxx");
 
         System.out.println(mainxx.name);
+        Map<Integer,Integer> map=new HashMap<>();
+        List<Integer> list=new ArrayList();
+        list.add(1);
+        list.add(1);
+        list.add(2);
+        list.add(2);
+        list.add(3);
+        list.add(3);
+        list.add(3);
+        for (Integer menuId : list) {
+            if(Objects.isNull(map.get(menuId))){
+                map.put(menuId,1);
+            }
+            else {
+                map.put(menuId,map.get(menuId)+1);
+            }
+        }
+        for (Integer key : map.keySet()) {
+            System.out.println(key+"  "+map.get(key));
+
+        }
+
+            Calendar cal = Calendar.getInstance();// 获取当前日期
+            cal.setTime(new Date());
+            //cal.set(Calendar.MONTH,);
+            //cal.set(Calendar.DAY_OF_MONTH, 1);
+            cal.add(Calendar.DAY_OF_YEAR,-60);
+        System.out.println(cal.getTime().toLocaleString());
+        String path="PA";
+        String[] split = path.split("/");
+        if(split.length>2)
+        {
+        StringBuffer sb=new StringBuffer();
+        System.out.println(split.length);
+        for (int i=0;i<split.length-1;i++){
+            if(i<split.length-2)
+            {sb.append(split[i]+"/");}
+            else
+            {sb.append(split[i]);}
+        }
+            System.out.println(sb.toString());
+        }else {
+            System.out.println(path);
+        }
+
+        System.out.println(Integer.parseInt("2013-05-20"));
+
+
+//        List<String> strings = Arrays.asList("PA/Test/dadad.txt".split("/")).subList(0,Arrays.asList("PA/Test/dadad.txt".split("/")).size()-1);
+//        System.out.println(strings.toString());
 
     }
 
@@ -137,6 +191,42 @@ public class Main implements Cloneable {
     public  static  class  xx{
 
     }
+
+
+
+
+        public static Date getCurrentFiscalYearBegin(Date date) {
+            Calendar cal = Calendar.getInstance();// 获取当前日期
+            cal.setTime(date);
+            cal.add(Calendar.YEAR, 0);
+            cal.set(Calendar.MONTH, 8);
+            int lastDay = cal.getActualMaximum(Calendar.DAY_OF_MONTH);
+            //设置日历中月份的最大天数
+            cal.set(Calendar.DAY_OF_MONTH, lastDay);
+            cal.set(Calendar.HOUR_OF_DAY, 0);
+            cal.set(Calendar.MINUTE, 0);
+            cal.set(Calendar.SECOND, 0);
+            cal.set(Calendar.MILLISECOND, 0);
+
+            return cal.getTime();
+        }
+//    public static Date getCurrentFiscalYearBegin(Date date) {
+//        Calendar cal = Calendar.getInstance();// 获取当前日期
+//        cal.setTime(date);
+//        cal.add(Calendar.YEAR, 0);
+//        cal.set(Calendar.MONTH, 8);
+//        int lastDay = cal.getActualMaximum(Calendar.DAY_OF_MONTH);
+//        //设置日历中月份的最大天数
+//        cal.set(Calendar.DAY_OF_MONTH, lastDay);
+//        cal.set(Calendar.HOUR_OF_DAY, 0);
+//        cal.set(Calendar.MINUTE, 0);
+//        cal.set(Calendar.SECOND, 0);
+//        cal.set(Calendar.MILLISECOND, 0);
+//
+//        return cal.getTime();
+//    }
+
+
 
 }
 

@@ -36,6 +36,7 @@ public class VolatileDemo {
             }).start();
 
         }
+        // 大于2是因为后台有两个线程Main线程和GC线程，表面上面还有线程正在运行
         while (Thread.activeCount() > 2) {
 
             Thread.yield();
@@ -44,7 +45,7 @@ public class VolatileDemo {
         System.out.println(Thread.currentThread().getName() + " Atomic number :" + md.atomicInteger);
     }
 
-    // volatile保证可见性
+    // volatile保证可见性Demo
     public static void visibleDemo() {
         mydate md = new mydate();
 
